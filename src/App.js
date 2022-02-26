@@ -25,7 +25,7 @@ function App() {
            <Route path="/about" element={<About/>}/>
            <Route path="/create" element={<Create/>}/>
            <Route path="/read" element={<Read/>}/>
-           <Route path="/update" element={<Update/>}/>
+           <Route path="/update/:id" element={<Update/>}/>
            </Routes>
        </Router>
     </div>
