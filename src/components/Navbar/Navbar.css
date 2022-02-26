@@ -1,0 +1,136 @@
+nav{
+    background: rgba(0,0,0,0.9);
+    padding: 20px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 99;
+}
+
+.menu_icon{
+    display: none;
+}
+
+.fas{
+    cursor: pointer !important;
+}
+
+.menu_icon .fa-times{
+    transform: rotate(360deg);
+    transition: all 0.4s ease-in-out;
+}
+
+.menu_icon .fa-bars{
+    transform: rotate(180deg);
+    transition: all 0.4s ease-in-out;
+}
+
+.logo{
+    font-weight: 600;
+    font-size: 25px;
+    color: tomato;
+}
+
+.logo font{
+    color: #fff;
+}
+
+.menu_list{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.menu_list li a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 300;
+    padding: 5px 10px;
+    margin-left: 20px;
+}
+
+.menu_list li:last-child a {
+    font-weight: 300;
+    padding: 5px 10px;
+    background-color: #01aacd;
+    transition: all 0.5s ease-in-out;
+    margin-left: 20px;
+    border-radius: 2px;
+}
+
+/* .menu_list li a:hover,
+.menu_list li a .active {
+    background-color: #fff;
+    border-radius: 2px;
+    color: #000;
+    transition: all 0.5s ease-in-out;
+} */
+
+.menu_list li a:hover {
+  background-color: #fff;
+  border-radius: 2px;
+  color: #000;
+  transition: all 0.5s ease-in-out;
+}
+
+.menu_list li a.active {
+    background-color: #fff;
+    border-radius: 2px;
+    color: #000;
+    transition: all 0.5s ease-in-out;
+  }
+
+
+  @media screen and (max-width: 800px) {
+      .logo{
+          font-size: 20px;
+      }
+
+      .menu_list li a{
+          font-size: 14px;
+          margin-left: 10px;
+      }
+  }
+
+  @media screen and (max-width: 600px) {
+      .menu_icon{
+          display: block;
+      }
+
+      .menu_list{
+          flex-direction: column;
+          width: 100%;
+          position: absolute;
+          background-color: rgba(0,0,0,0.6);
+          padding: 20px;
+          top: 63px;
+          right: 0;
+          transition: all 0.5s ease-in-out;
+
+      }
+      .menu_list li{
+          margin-bottom: 20px;
+          width: 100%;
+          text-align: center;
+      }
+
+      .menu_list li:last-child {
+        margin-bottom: 0;
+      }
+
+      .menu_list li a,
+      .menu_list li:last-child a{
+          width: 100px;
+          /* background-color: #fff; */
+          display: block;
+          margin: auto;
+      }
+
+      .menu_list.close{
+          right: -200%;
+          transition: all 0.5s ease-in-out;
+      }
+  }
