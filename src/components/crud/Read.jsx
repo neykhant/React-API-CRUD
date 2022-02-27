@@ -15,22 +15,36 @@ const Read = () => {
     // console.log(data)
   };
 
-  const getData = () => {
-    axios
-      .get(`https://621899991a1ba20cbaa557d9.mockapi.io/fakeData`)
-      .then((res) => {
-        setAPIData(res.data);
-      });
-  };
+  // const getData = () => {
+  //   axios
+  //     .get(`https://621899991a1ba20cbaa557d9.mockapi.io/fakeData`)
+  //     .then((res) => {
+  //       setAPIData(res.data);
+  //     });
+  // };
+
+  // useEffect(() => {
+  //   getData();
+  //   console.log("read")
+
+  //   return () => {
+  //     getData();
+  //   };
+  // }, []);
 
   useEffect(() => {
-    getData();
-    console.log("read")
-
-    return () => {
-      getData();
-    };
+    console.log("readuseEffect")
+    axios
+      .get(`https://621899991a1ba20cbaa557d9.mockapi.io/fakeData`)
+      .then((response) => {
+        setAPIData(response.data);
+      });
   }, []);
+
+  // const onDelete = (id) =>{
+  //   console.log(id);
+  //   axios.delete(`https://621899991a1ba20cbaa557d9.mockapi.io/fakeData/${id}`)
+  // }
 
   const onDelete = (id) => {
     axios
@@ -62,8 +76,8 @@ const Read = () => {
               <td>{data.lastName}</td>
               <td>{data.checkbox ? "Checked" : "Unchecked"}</td>
               <td>
-                <Link to={`/update/${data.id}`}>
-                  <button>Update</button>
+                <Link to='/update'>
+                  <button onClick={() => setData(data)}>Update</button>
                 </Link>
                 <button onClick={() => onDelete(data.id)}>Delete</button>
               </td>

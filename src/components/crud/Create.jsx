@@ -14,12 +14,18 @@ const Create = () => {
     const [checkbox, setCheckbox] = useState(false);
 
     const postData = () => {
+      console.log("createDate");
       axios.post(`https://621899991a1ba20cbaa557d9.mockapi.io/fakeData`, {
           firstName,
           lastName,
           checkbox
+      }).then(() =>{
+        navigate('/read');
       })
-window.location = "/read";
+      console.log(firstName)
+      console.log(lastName)
+      console.log(checkbox)
+// window.location = "/read";
       // navigate('/read')
   }
   return (
